@@ -13,20 +13,20 @@ export default function Layout() {
   return (
     <>
       <Navbar className="bg-gray-100 shadow-lg" fluid rounded>
-        <Navbar.Brand href="https://flowbite-react.com">
+        <Navbar.Brand>
           {/* <img
             src="/favicon.svg"
             className="mr-3 h-6 sm:h-9"
             alt="Flowbite React Logo"
           /> */}
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            E Shopper
+            <NavLink to="">E Shopper</NavLink>
           </span>
         </Navbar.Brand>
 
         <Navbar.Collapse>
-          <Navbar.Link active>
-            <NavLink to="">Home</NavLink>
+          <Navbar.Link >
+            <NavLink  to="">Home</NavLink>
           </Navbar.Link>
           <Navbar.Link>
             <NavLink to="products/">Products</NavLink>
@@ -69,8 +69,8 @@ export default function Layout() {
         </div> */}
         <div className="flex md:order-2">
           <Navbar.Collapse>
-            <Navbar.Link href="#">Login</Navbar.Link>
-            <Navbar.Link href="#">Register</Navbar.Link>
+            <NavLink to="login/">Login</NavLink>
+            <NavLink to="register/">Register</NavLink>
           </Navbar.Collapse>
         </div>
         <Navbar.Toggle />
