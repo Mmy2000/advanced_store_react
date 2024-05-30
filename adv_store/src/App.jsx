@@ -11,6 +11,7 @@ import Register from './components/Register/Register'
 import Login from './components/Login/Login'
 import Brands from './components/Brands/Brands'
 import Notfound from './components/Notfound/Notfound'
+import Cart from './components/Cart/Cart'
 
 let route = createBrowserRouter([
   {path:'' , element:<Layout/> , children:[
@@ -20,6 +21,7 @@ let route = createBrowserRouter([
     {path:'brands' , element:<Brands/>},
     {path:'register' , element:<Register/>},
     {path:'login' , element:<Login/>},
+    {path:'cart' , element:<Cart/>},
     {path:'*' , element:<Notfound/>},
   ]}
 ])
