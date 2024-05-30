@@ -12,7 +12,7 @@ export default function Layout() {
     } , []);
   return (
     <>
-      <Navbar className='bg-gray-100 shadow-lg' fluid rounded>
+      <Navbar className="bg-gray-100 shadow-lg" fluid rounded>
         <Navbar.Brand href="https://flowbite-react.com">
           {/* <img
             src="/favicon.svg"
@@ -73,6 +73,7 @@ export default function Layout() {
             <Navbar.Link href="#">Register</Navbar.Link>
           </Navbar.Collapse>
         </div>
+        <Navbar.Toggle />
       </Navbar>
       <div className="container mx-auto bg-red-400 py-6 my-6">
         <Outlet></Outlet>
