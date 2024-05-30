@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Style from './Layout.module.css';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 
 export default function Layout() {
@@ -8,7 +11,11 @@ export default function Layout() {
 
     } , []);
   return <>
-    <h1>Layout</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi eligendi accusantium libero quae sit ex reiciendis eaque voluptatem. Sed architecto, voluptatibus ab nobis praesentium laudantium consequatur assumenda error odio maiores!</p>
+    <Navbar/>
+    <div className="container mx-auto bg-red-400 py-6 my-6">
+        <Outlet></Outlet>
+    </div>
+
+    <Footer/>
   </>
 }
