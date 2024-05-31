@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="max-w-screen-xl mx-auto">
           <div className="container flex md:justify-between items-center ">
             <h1>
-              <span className="text-lg font-semibold">Landwind</span>
+              <span className="text-lg font-semibold">E Shopper</span>
             </h1>
             <ul className="hidden md:flex gap-8">
               <li className=" relative hover:before:w-full dark:before:bg-white before:transition-[width] before:duration-300 before:w-0 before:h-[2px] before:bg-purple-600 before:absolute before:left-0 before:-bottom-1">

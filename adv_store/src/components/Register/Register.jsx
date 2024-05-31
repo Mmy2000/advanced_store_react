@@ -7,11 +7,10 @@ import { useNavigate } from "react-router-dom";
 export default function Register() {
   let navigate = useNavigate()
   async function handleRegister(formValues) {
-    let {data} = await axios.post(`https://127.0.0.1:8000/accounts/api/register/` , formValues)
-    console.log(data);
-    if (data.message === "User registered successfully") {
-        navigate('/')
-    }
+    axios.post(`https://nesetim305.pythonanywhere.com/accounts/api/register/` , formValues)
+    .then( (apiResponse)=>{
+      console.log(apiResponse);
+    })
     
   }
   let formik = useFormik({
