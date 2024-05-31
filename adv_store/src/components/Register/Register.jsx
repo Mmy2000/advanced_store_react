@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Style from "./Register.module.css";
 import { Formik, useFormik } from "formik";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  function handleRegister(formValues) {
-    console.log(formValues);
+  let navigate = useNavigate()
+  async function handleRegister(formValues) {
+    let {data} = await axios.post(`https://127.0.0.1:8000/accounts/api/register/` , formValues)
+    console.log(data);
+    if (data.message === "User registered successfully") {
+        navigate('/')
+    }
+    
   }
   let formik = useFormik({
     initialValues: {
