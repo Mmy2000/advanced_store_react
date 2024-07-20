@@ -12,6 +12,7 @@ import Login from './components/Login/Login'
 import Brands from './components/Brands/Brands'
 import Notfound from './components/Notfound/Notfound'
 import Cart from './components/Cart/Cart'
+import { ToastContainer } from "react-toastify";
 
 let route = createBrowserRouter([
   {path:'' , element:<Layout/> , children:[
@@ -30,9 +31,13 @@ let route = createBrowserRouter([
 function App() {
   const [count, setCount] = useState(0)
 
-  return <>
-        <RouterProvider router={route}></RouterProvider>
+  return (
+    <>
+      <RouterProvider router={route}>
+        <ToastContainer />
+      </RouterProvider>
     </>
+  );
 }
 
 export default App
