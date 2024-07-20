@@ -41,7 +41,6 @@ export default function Register() {
           toast.error("Not Registered Successfully");
         }
       });
-    console.log(formValues);
   }
 
   let formik = useFormik({
@@ -69,6 +68,7 @@ export default function Register() {
               <input
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+                value={formik.values.first_name}
                 type="text"
                 name="first_name"
                 id="floating_first_name"
@@ -175,15 +175,32 @@ export default function Register() {
               </label>
             </div>
           </div>
-
           <button
             type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             {isLoading ? (
-              <i className="fas fa-spinner fa-spin me-2"></i>
+              <div role="status">
+                <svg
+                  aria-hidden="true"
+                  className="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9765 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9765 100 50.5908ZM9.08157 50.5908C9.08157 73.1661 27.4247 91.5092 50 91.5092C72.5753 91.5092 90.9184 73.1661 90.9184 50.5908C90.9184 28.0154 72.5753 9.67241 50 9.67241C27.4247 9.67241 9.08157 28.0154 9.08157 50.5908Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7233 75.2124 7.55341C69.5422 4.38354 63.2754 2.51562 56.7654 2.05119C51.7666 1.66726 46.7393 2.05619 41.8381 3.19235C39.3253 3.7592 37.866 6.2614 38.5031 8.68696C39.1403 11.1125 41.6155 12.5226 44.1513 12.1162C47.9765 11.4599 51.9071 11.4956 55.7315 12.2167C60.8941 13.1533 65.786 15.2646 70.013 18.4297C74.2399 21.5949 77.7088 25.7427 80.1573 30.5545C82.0167 34.0834 83.3684 37.874 84.1476 41.811C84.681 44.2215 87.5423 45.6781 89.9676 45.0409Z"
+                    fill="currentFill"
+                  />
+                </svg>
+                <span className="sr-only">Loading...</span>
+              </div>
             ) : (
-              "Submit"
+              "Register"
             )}
           </button>
         </form>
